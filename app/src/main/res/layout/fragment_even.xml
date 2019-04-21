@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Fragments.EvenFragment"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/etEven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter number"
+        />
+<Button
+    android:id="@+id/btnEven"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Enter"
+    />
+</LinearLayout>

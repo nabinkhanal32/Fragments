@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import Fragments.EvenFragment;
 import Fragments.FirstFragment;
 import Fragments.SecondFragment;
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 {
     private Button btnFragment;
 
-    private Boolean status = true;
+    private int status = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,24 +32,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if (status)
+        if (status==0)
         {
             FirstFragment firstFragment = new FirstFragment();
             fragmentTransaction.replace(R.id.fragmentContainer,firstFragment);
             fragmentTransaction.commit();
             fragmentTransaction.addToBackStack(null);
             btnFragment.setText("Load Second Fragment");
-            status = false;
+            status ++;
         }
-        else {
+        else if (status==1){
             SecondFragment secondFragment = new SecondFragment();
             fragmentTransaction.replace(R.id.fragmentContainer,secondFragment);
             fragmentTransaction.commit();
             fragmentTransaction.addToBackStack(null);
-            btnFragment.setText("Load First Fragment");
-            status = true;
+            btnFragment.setText("Load Third Fragment");
+            status++;
         }
-
+            else {
+            EvenFragment evenFragment = new EvenFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer,evenFragment);
+            fragmentTransaction.commit();
+            fragmentTransaction.addToBackStack(null);
+            btnFragment.setText("Load First Fragment");
+            status= 0;
+        }
 
     }
 }
