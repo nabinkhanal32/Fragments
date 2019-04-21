@@ -1,15 +1,30 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
     tools:context="Fragments.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+   <!-- <TextView
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Welcome to second fragment" />
+        android:text="Welcome to second fragment" />-->
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/etThird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Area of Circle"
+        android:gravity="center"
+        />
+        <Button
+            android:id="@+id/btnCalc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            />
+</LinearLayout>
